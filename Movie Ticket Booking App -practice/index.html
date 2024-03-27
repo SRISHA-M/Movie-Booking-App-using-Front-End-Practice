@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src= 
+    "https://code.jquery.com/jquery-3.5.1.min.js"> 
+</script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+  
+</head>
+<body>
+  <!-- navigation bar -->
+    <nav>
+    <header class="p-3 text-dark p-4">
+        <div class="container-fluid">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <img src="logo1.jpeg" alt="" width="80px" class="ml-10px " id="logo">
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 h4">
+              <li><a href="#" class="nav-link px-2 text-dark " id="home">Home</a></li>
+              <li><a href="#" class="nav-link px-2 text-dark " id="movie">Movies</a></li>
+              <li><a href="#" class="nav-link px-2 text-dark " id="cinema">Cinemas</a></li>
+              <li><a href="#" class="nav-link px-2 text-dark " id="orders">Orders</a></li>
+              <li><a href="#" class="nav-link px-2 text-dark " id="About">About</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control form-control-dark text-bg-light text-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <!-- login -->
+              <button onclick="togglePopup()"  id="login" class="btn btn-outline-dark me-2">login</button> 
+  
+              <!-- div containing the popup -->
+              <div class="content"> 
+                  <div onclick="togglePopup()" class="close-btn"> 
+                      × 
+                  </div> 
+                  <form action="">
+                    <h1 id="log">LOGIN FORM</h1>
+                    <label for="name" id="name1">USER NAME:</label>
+                    <input type="text" name="" id="name" placeholder="sri" required>
+                    <br><br>
+                    <label for="email" id="password">PASSWORD:</label>
+                    <input type="text" id="pwd" placeholder="sri@123" required>
+                    <br><br>
+                    <button id="on1" >LOGIN</button>
+                    </form>
+              </div> 
+
+
+
+              <!-- sign-up -->
+              <button type="button" class="btn btn-success" onclick="signin()">Sign-up</button> 
+              <form action="index.js" id="contact-form" onsubmit="return upload()">
+                 <h6 id="h">SIGN-UP</h6>
+                <input type="hidden" name="contact_number">
+                <label id="name2">Name</label>
+                <input type="text" name="from_name" id="name22" placeholder="sri">
+                <br><br>
+                <label id="email2">Email</label>
+                <input type="email" name="from_email" id="email22" placeholder="sri@123">
+                <br><br>
+                <input type="button" value="submit" id="signup" onclick="upload()">
+                <div onclick="signin()" class="close-btn"> 
+                  × 
+              </div> 
+            </form>
+            </div>
+          </div>
+        </div>
+      </header>
+    </nav>
+      <!-- carousal -->
+      <section >
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img  id="carimg1" src="aya.jpg" class="d-block " alt="..." width="100%">
+          </div>
+          <div class="carousel-item">
+            <img  id="carimg2" src="jap.jpg" class="d-block " alt="..." width="100%">
+          </div>
+          <div class="carousel-item">
+            <img  id="carimg3" src="cong.jpg" class="d-block " alt="..." width="100%">
+          </div>
+          <div class="carousel-item">
+            <img  id="carimg4" src="jig.jpg" class="d-block " alt="..." width="100%">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+   <!-- main -->
+<section id="sec3">
+    <div id="sidebar">
+        <form action="#" >
+          <div class="sidebar-groups">
+           
+            <h1 class="sg-title text-dark">Movie Name</h1>
+            <input type="checkbox" id="ayalaan" name="ayalaan " value="ayalaan" >
+            <label for="ayalaan"  class="text-dark">Ayalaan</label><br>
+            <input type="checkbox" id="konguva" name=" konguva" value="konguva">
+            <label for="konguva"  class="text-dark">Konguva</label><br>
+            <input type="checkbox" id="captain miller" name="captain miller " value="captain miller" >
+            <label for="captain miller" class="text-dark">Captain Miller</label><br>
+            <input type="checkbox" id="mission" name=" mission" value="mission" >
+            <label for="mission" class="text-dark">Mission</label><br>
+            <input type="checkbox" id="joe" name="joe " value="joe">
+            <label for="joe"  class="text-dark">Joe</label><br>
+          </div>
+      
+      
+            <div class="sidebar-groups">
+            <h1 class="sg-title text-dark">Location</h1>
+            <input type="checkbox" id="salem" name="salem " value="salem" >
+            <label for="salem" class="text-dark">Salem</label><br>
+            <input type="checkbox" id="coimbatore" name=" coimbatore" value="coimbatore">
+            <label for="coimbatore"  class="text-dark">Coimbatore</label><br>
+            <input type="checkbox" id="chennai" name="chennai " value="chennai">
+            <label for="chennai"  class="text-dark">Chennai</label><br>
+            </div>
+
+            <div class="sidebar-groups">
+              <h1 class="sg-title text-dark">Timing</h1>
+              <input type="radio" id="9-00am to 12-00pm" name="9-00am to 12-00pm " value="9-00am to 12-00pm" >
+            <label for="9-00am to 12-00pm" class="text-dark">9.00am-12.00pm</label><br>
+            <input type="radio" id="1-00pm to 4-00pm" name="1-00pm to 4-00pm" value="1-00pm to 4-00pm" >
+            <label for="1-00pm to 4-00pm" class="text-dark">1.00pm-4.00pm</label><br>
+            <input type="radio" id="5-00pm to 8-00pm" name="5-00pm to 8-00pm " value="5-00pm to 8-00pm" >
+            <label for="5-00pm to 8-00pm" class="text-dark">5.00pm-8.00pm</label><br>
+            </div>
+            <div class="sidebar-groups">
+            <a href="#" class="btn-1  btn bg-success text-light m-3" onclick="Popup()" id="apply">Apply Filters</a>
+          </div>
+          <div class="content1"> 
+            <div onclick="Popup()" class="close-btn"> 
+                × 
+            </div> 
+            <div>
+              <button id="pn">PAY NOW</button>
+              <br>
+              <i class="fa fa-credit-card" aria-hidden="true"></i>
+              <i class="fa fa-money" aria-hidden="true"></i>
+              <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+              <br>
+              <button id="gt" class="get">GET TICKET</button>
+              
+    </div>
+    </section>
+
+
+
+
+
+    <!-- card -->
+       
+
+      <section id="sec4">
+        <section id="window1">
+         <!-- card1 -->
+          <p id="heading">WATCH TRAILER</p>
+          <video id="ayavid" src="aya.mp4" controls></video>
+          <button id="button1" onclick="ax()" class="close-btn">×</button>
+                
+  
+          </section>
+      <h3>NOW SHOWING</h3>
+      <div class="row row-cols-1 row-cols-md-3 g-5">
+        <div class="col" id="card1">
+          <div class="card h-90 w-80" >
+            <img src="aya2.jpeg" class="card-img-top w-80" alt="..." id="play1" onclick="az()">
+            <div class="card-body">
+              <h5 class="card-title h-10">Ayalaan</h5>
+            <button class="bg-success text-light" onclick="aa()" id="book1">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+
+  <section id="booknow1">
+    <div id="relative">
+    <div id="location1">
+      <h1>CHOOSE LOCATION</h1>
+      <input type="checkbox" id="salem" name="salem" value="salem" class="ml">
+            <label for="salem"  class="loc1 text-light">Salem</label><br>
+            <input type="checkbox" id="coimbatore" name="coimbatore" value="coimbatore" class="ml">
+            <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+            <input type="checkbox" id="chennai" name="chennai " value="chennai" class="ml" >
+            <label for="chennai" class="loc1 text-light">Chennai</label><br>
+    </div>
+
+      <div id="theater1">
+<h1>SELECT THEATERS</h1>
+<input type="checkbox" id="inox" name="inox" value="inox" class="ml" >
+            <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+            <input type="checkbox" id="arrs" name="arrs" value="arrs" class="ml">
+            <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+            <input type="checkbox" id="pvr" name="pvr " value="pvr" class="ml">
+            <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+</div>
+
+
+
+<div id="timing1">
+  <h1>CHOOSE TIMING</h1>
+  <input type="checkbox" id="mor" name="mor" value="mor" class="ml">
+  <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+  <input type="checkbox" id="noon" name="noon" value="noon" class="ml">
+  <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+  <input type="checkbox" id="eve" name="eve " value="eve" class="ml">
+  <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+ 
+
+<div id="tablediv1">
+  <table id="table1">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+     
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+    <td>20</td>
+    </tr>
+    <tr>
+     
+    
+    <td>21</td>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+    <td>25</td>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td>29</td>
+      <td>30</td>
+   </tr>
+    <tr>
+      
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+      <td>34</td>
+      <td>35</td>
+      <td>36</td>
+      <td>37</td>
+      <td>38</td>
+      <td>39</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+      <td>44</td>
+      <td>45</td>
+      <td>46</td>
+      <td>47</td>
+      <td>48</td>
+      <td>49</td>
+      <td>50</td>
+    
+      
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>52</td>
+      <td>53</td>
+      <td>54</td>
+      <td>55</td>
+      <td>56</td>
+      <td>57</td>
+      <td>58</td>
+      <td>59</td>
+      <td>60</td>
+    </tr>
+  </table>
+  <h1 id="select1">SELECT SEATS</h1>
+</div>
+<button id="paynow1">PAY NOW</button><button id="getticket1"  class="get">GET TICKET</button>
+<button onclick="ba()" id="close1" class="close-btn">×</button>
+</div>
+</div>
+  </section>
+  
+
+        <!-- card2  -->
+        <section id="win2">
+         
+          <p id="heading1">WATCH TRAILER</p>
+         <video  id="kanvid" src="kan.mp4" controls></video>
+          <button id="button2" onclick="bx()" class="close-btn">×</button>
+         
+          </section>
+
+
+        <div class="col" id="card2">
+          <div class="card h-90 w-80" >
+            <img src="kon2.jpg" class="card-img-top w-80" alt="..." id="play2" onclick="bz()">
+            <div class="card-body">
+              <h5 class="card-title">Kanguva</h5>
+              <button class="bg-success text-light" id="book2" onclick="ab()">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <section id="booknow2">
+          <div id="relative2">
+          <div id="location2">
+            <h1>CHOOSE LOCATION</h1>
+            <input type="checkbox" id="salem2" name="salem" value="salem" class="ml">
+                  <label for="salem"  class="loc1 text-light">Salem</label><br>
+                  <input type="checkbox" id="coimbatore2" name="coimbatore" value="coimbatore" class="ml">
+                  <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+                  <input type="checkbox" id="chennai2" name="chennai " value="chennai" class="ml" >
+                  <label for="chennai" class="loc1 text-light">Chennai</label><br>
+          </div>
+      
+      
+            <div id="theater2">
+      <h1>SELECT THEATERS</h1>
+      <input type="checkbox" id="inox2" name="inox" value="inox" class="ml" >
+                  <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+                  <input type="checkbox" id="arrs2" name="arrs" value="arrs" class="ml">
+                  <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+                  <input type="checkbox" id="pvr2" name="pvr " value="pvr" class="ml">
+                  <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+      </div>
+      
+      
+      
+      <div id="timing2">
+        <h1>CHOOSE TIMING</h1>
+        <input type="checkbox" id="mor2" name="mor" value="mor" class="ml">
+        <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+        <input type="checkbox" id="noon2" name="noon" value="noon" class="ml">
+        <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+        <input type="checkbox" id="eve2" name="eve " value="eve" class="ml">
+        <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+       
+      
+      <div id="tablediv2">
+        <table id="table2">
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+           
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+          <td>20</td>
+          </tr>
+          <tr>
+           
+          
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+         </tr>
+          <tr>
+            
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+            <td>45</td>
+            <td>46</td>
+            <td>47</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          
+            
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>59</td>
+            <td>60</td>
+          </tr>
+        </table>
+        <h1 id="select2">SELECT SEATS</h1>
+      </div>
+      <button id="paynow2">PAY NOW</button><button id="getticket2"  class="get">GET TICKET</button>
+      <button onclick="bb()" id="close2" class="close-btn">×</button>
+      </div>
+        </section>
+      
+<!-- card3 -->
+        
+          <section id="win3">
+           
+            <p id="heading2">WATCH TRAILER</p>
+           <video id="capvid" src="cap.mp4" controls></video>
+            <button id="button3" onclick="cx()" class="close-btn">×</button>
+
+        </section>
+
+
+        <div class="col" id="card3">
+          <div class="card h-80 w-90">
+            <img src="cap2.jpg" class="card-img-top w-80" alt="..." id="play3" onclick="cz()">
+            <div class="card-body">
+              <h5 class="card-title">Captain Miller</h5>
+              <button class="bg-success text-light" id="book3" onclick="ac()">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <section id="booknow3">
+          <div id="relative3">
+          <div id="location3">
+            <h1>CHOOSE LOCATION</h1>
+            <input type="checkbox" id="salem3" name="salem" value="salem" class="ml">
+                  <label for="salem"  class="loc1 text-light">Salem</label><br>
+                  <input type="checkbox" id="coimbatore3" name="coimbatore" value="coimbatore" class="ml">
+                  <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+                  <input type="checkbox" id="chennai3" name="chennai " value="chennai" class="ml" >
+                  <label for="chennai" class="loc1 text-light">Chennai</label><br>
+          </div>
+      
+      
+            <div id="theater3">
+      <h1>SELECT THEATERS</h1>
+      <input type="checkbox" id="inox3" name="inox" value="inox" class="ml" >
+                  <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+                  <input type="checkbox" id="arrs3" name="arrs" value="arrs" class="ml">
+                  <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+                  <input type="checkbox" id="pvr3" name="pvr " value="pvr" class="ml">
+                  <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+      </div>
+      
+      
+      
+      <div id="timing3">
+        <h1>CHOOSE TIMING</h1>
+        <input type="checkbox" id="mor3" name="mor" value="mor" class="ml">
+        <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+        <input type="checkbox" id="noon3" name="noon" value="noon" class="ml">
+        <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+        <input type="checkbox" id="eve3" name="eve " value="eve" class="ml">
+        <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+       
+      
+      <div id="tablediv3">
+        <table id="table3">
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+           
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+          <td>20</td>
+          </tr>
+          <tr>
+           
+          
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+         </tr>
+          <tr>
+            
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+            <td>45</td>
+            <td>46</td>
+            <td>47</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          
+            
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>59</td>
+            <td>60</td>
+          </tr>
+        </table>
+        <h1 id="select3">SELECT SEATS</h1>
+      </div>
+      <button id="paynow3">PAY NOW</button><button id="getticket3"  class="get">GET TICKET</button>
+      <button onclick="bc()" id="close3" class="close-btn">×</button>
+      </div>
+
+    </section>
+
+
+
+      <!-- card4 -->
+       
+        <section id="win4">
+           
+          <p id="heading3">WATCH TRAILER</p>
+         <video id="joevid" src="joe.mp4" controls></video>
+          <button id="button4" onclick="dx()" class="close-btn">×</button>
+
+      </section>
+
+        <div class="col" id="card4">
+          <div class="card h-90 w-80">
+            <img src="joe.jpg" class="card-img-top w-80" alt="..." id="play4" onclick="dz()">
+            <div class="card-body">
+              <h5 class="card-title h-10">Joe</h5>
+            <button class="bg-success text-light" id="book4" onclick="ad()">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+        <section id="booknow4">
+          <div id="relative4">
+          <div id="location4">
+            <h1>CHOOSE LOCATION</h1>
+            <input type="checkbox" id="salem4" name="salem" value="salem" class="ml">
+                  <label for="salem"  class="loc1 text-light">Salem</label><br>
+                  <input type="checkbox" id="coimbatore4" name="coimbatore" value="coimbatore" class="ml">
+                  <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+                  <input type="checkbox" id="chennai4" name="chennai " value="chennai" class="ml" >
+                  <label for="chennai" class="loc1 text-light">Chennai</label><br>
+          </div>
+      
+      
+            <div id="theater4">
+      <h1>SELECT THEATERS</h1>
+      <input type="checkbox" id="inox4" name="inox" value="inox" class="ml" >
+                  <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+                  <input type="checkbox" id="arrs4" name="arrs" value="arrs" class="ml">
+                  <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+                  <input type="checkbox" id="pvr4" name="pvr " value="pvr" class="ml">
+                  <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+      </div>
+      
+      
+      
+      <div id="timing4">
+        <h1>CHOOSE TIMING</h1>
+        <input type="checkbox" id="mor4" name="mor" value="mor" class="ml">
+        <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+        <input type="checkbox" id="noon4" name="noon" value="noon" class="ml">
+        <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+        <input type="checkbox" id="eve4" name="eve " value="eve" class="ml">
+        <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+       
+      
+      <div id="tablediv4">
+        <table id="table4">
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+           
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+          <td>20</td>
+          </tr>
+          <tr>
+           
+          
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+         </tr>
+          <tr>
+            
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+            <td>45</td>
+            <td>46</td>
+            <td>47</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          
+            
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>59</td>
+            <td>60</td>
+          </tr>
+        </table>
+        <h1 id="select4">SELECT SEATS</h1>
+      </div>
+      <button id="paynow4">PAY NOW</button><button id="getticket4"  class="get">GET TICKET</button>
+      <button onclick="bd()" id="close4" class="close-btn">×</button>
+      </div>
+
+    </section>
+
+      <!-- card5 -->
+       
+        <section id="win5">
+           
+          <p id="heading4">WATCH TRAILER</p>
+        <video id="misvid" src="mis.mp4" controls></video>
+          <button id="button5" onclick="ex()" class="close-btn">×</button>
+
+      </section>
+
+        <div class="col" id="card5">
+          <div class="card h-90 w-80">
+            <img src="mis.jpg" class="card-img-top w-80" alt="..." id="play5" onclick="ez()">
+            <div class="card-body">
+              <h5 class="card-title">Mission</h5>
+              <button class="bg-success text-light" id="book5" onclick="ae()">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+        <section id="booknow5">
+          <div id="relative5">
+          <div id="location5">
+            <h1>CHOOSE LOCATION</h1>
+            <input type="checkbox" id="salem5" name="salem" value="salem" class="ml">
+                  <label for="salem"  class="loc1 text-light">Salem</label><br>
+                  <input type="checkbox" id="coimbatore5" name="coimbatore" value="coimbatore" class="ml">
+                  <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+                  <input type="checkbox" id="chennai5" name="chennai " value="chennai" class="ml" >
+                  <label for="chennai" class="loc1 text-light">Chennai</label><br>
+          </div>
+      
+      
+            <div id="theater5">
+      <h1>SELECT THEATERS</h1>
+      <input type="checkbox" id="inox5" name="inox" value="inox" class="ml" >
+                  <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+                  <input type="checkbox" id="arrs5" name="arrs" value="arrs" class="ml">
+                  <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+                  <input type="checkbox" id="pvr5" name="pvr " value="pvr" class="ml">
+                  <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+      </div>
+      
+      
+      
+      <div id="timing5">
+        <h1>CHOOSE TIMING</h1>
+        <input type="checkbox" id="mor5" name="mor" value="mor" class="ml">
+        <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+        <input type="checkbox" id="noon5" name="noon" value="noon" class="ml">
+        <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+        <input type="checkbox" id="eve5" name="eve " value="eve" class="ml">
+        <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+       
+      
+      <div id="tablediv5">
+        <table id="table5">
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+          </tr>
+          <tr>
+           
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+          <td>20</td>
+          </tr>
+          <tr>
+           
+          
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+         </tr>
+          <tr>
+            
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+            <td>39</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+            <td>45</td>
+            <td>46</td>
+            <td>47</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          
+            
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>59</td>
+            <td>60</td>
+          </tr>
+        </table>
+        <h1 id="select5">SELECT SEATS</h1>
+      </div>
+      <button id="paynow5">PAY NOW</button><button id="getticket5"  class="get">GET TICKET</button>
+      <button onclick="be()" id="close5" class="close-btn">×</button>
+      </div>
+        </section>
+
+        <!-- card6 -->
+
+        <section id="window6">
+           
+          <p id="heading5">WATCH TRAILER</p>
+          <video id="parvid" src="par.mp4" controls></video>
+          <button id="button6" onclick="fx()" class="close-btn">×</button>
+
+      </section>
+
+        <div class="col" id="card6">
+          <div class="card h-80 w-90">
+            <img src="par.jpg" class="card-img-top w-80" alt="..." id="play6" onclick="fz()">
+            <div class="card-body">
+              <h5 class="card-title">Parking</h5>
+              <button class="bg-success text-light" id="book6" onclick="af()">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="booknow6">
+      <div id="relative6">
+      <div id="location6">
+        <h1>CHOOSE LOCATION</h1>
+        <input type="checkbox" id="salem6" name="salem" value="salem" class="ml">
+              <label for="salem"  class="loc1 text-light">Salem</label><br>
+              <input type="checkbox" id="coimbatore6" name="coimbatore" value="coimbatore" class="ml">
+              <label for="coimbatore"  class=" loc1 text-light">Coimbatore</label><br>
+              <input type="checkbox" id="chennai6" name="chennai " value="chennai" class="ml" >
+              <label for="chennai" class="loc1 text-light">Chennai</label><br>
+      </div>
+  
+  
+        <div id="theater6">
+  <h1>SELECT THEATERS</h1>
+  <input type="checkbox" id="inox6" name="inox" value="inox" class="ml" >
+              <label for="inox"  class="the1 text-light">INOX Theater</label><br>
+              <input type="checkbox" id="arrs6" name="arrs" value="arrs" class="ml">
+              <label for="arrs"  class="the1 text-light">ARRS Multiplex</label><br>
+              <input type="checkbox" id="pvr6" name="pvr " value="pvr" class="ml">
+              <label for="pvr" class="the1 text-light">PVR Cinemas</label><br>
+  </div>
+  
+  
+  
+  <div id="timing6">
+    <h1>CHOOSE TIMING</h1>
+    <input type="checkbox" id="mor6" name="mor" value="mor" class="ml">
+    <label for="mor"  class="time1 text-light">9.00am-12.00pm</label><br>
+    <input type="checkbox" id="noon6" name="noon" value="noon" class="ml">
+    <label for="noon"  class="time1 text-light">1.00pm-4.00pm</label><br>
+    <input type="checkbox" id="eve6" name="eve " value="eve" class="ml">
+    <label for="eve" class="time1 text-light">5.00pm-8.00pm</label><br>
+   
+  
+  <div id="tablediv6">
+    <table id="table6">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+      </tr>
+      <tr>
+       
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+      <td>20</td>
+      </tr>
+      <tr>
+       
+      
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+     </tr>
+      <tr>
+        
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+        <td>34</td>
+        <td>35</td>
+        <td>36</td>
+        <td>37</td>
+        <td>38</td>
+        <td>39</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>42</td>
+        <td>43</td>
+        <td>44</td>
+        <td>45</td>
+        <td>46</td>
+        <td>47</td>
+        <td>48</td>
+        <td>49</td>
+        <td>50</td>
+      
+        
+      </tr>
+      <tr>
+        <td>51</td>
+        <td>52</td>
+        <td>53</td>
+        <td>54</td>
+        <td>55</td>
+        <td>56</td>
+        <td>57</td>
+        <td>58</td>
+        <td>59</td>
+        <td>60</td>
+      </tr>
+    </table>
+    <h1 id="select6">SELECT SEATS</h1>
+  </div>
+  <button id="paynow6">PAY NOW</button><button id="getticket6"  class="get">GET TICKET</button>
+  <button onclick="bf()" id="close6" class="close-btn">×</button>
+  </div>
+    </section>
+  </section>
+
+    <!-- card2nd part -->
+   <!-- section5 -->
+   <section id="sec5">
+    <h2>UPCOMMING MOVIES</h2>
+    <img src="dev.jpeg" alt="" id="dev"><img src="mar.jpg" alt="" id="mar">
+    <img src="vad.jpg" alt="" id="vad"><img src="sec108.jpg" alt="" id="sec108">
+    <img src="com.png" alt="" id="com">
+  </section>
+    
+<!-- section6 -->
+<section id="sec6">
+  <h3>HORROR MOVIE TEASERS</h3>
+  <video  id="vid1"   src="vid1.mp4" controls>ASVINS</video> <video id="vid2" src="vid2.mp4" controls>BOO</video>
+<br>
+<video id="vid3" src="vid3.mp4"controls></video><video id="vid4" src="vid4.mp4" controls></video>
+ 
+</section>
+
+
+<!-- section7 -->
+<section id="sec7">
+  <h3 id="h1">WATCH MOVIES ON</h3>
+<img id="you" src="you.jpeg" alt="">
+<img id="hots" src="hots.png" alt="">
+<img id="ntflx" src="ntflx.png" alt="">
+<img id="mx" src="mx.png" alt="">
+</section>
+
+  <!-- footer -->
+  <section id="sec8">
+  <div class="container-fluid">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h4 class="p-2 ">About Us</h4>
+          <ul class="nav2 flex-column">
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Advertise with us</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Careers</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Contact Us</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h4 class="p-2 ">Customer Care</h4>
+          <ul class="nav2 flex-column">
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">onlinehelpdesk<br>@sricinemas.com</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Privacy Policy</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">Refunds and Cancellations</a></li>
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">terms and conditions</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h4 class="p-2 ">Address</h4>
+          <ul class="nav2 flex-column">
+            <li class="nav-item2 mb-2"><a href="#" class="nav-link2 p-2 text-body-secondary">sricinemas<br>
+            3/339q,anna nagar,<br>sipcot,hosur.<br>pin code:635126<br>contact us:9876543210</a></li>
+          </ul>
+        </div>
+       
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button id="q" class="btn btn-dark" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  <div id="div5">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p id="p">© 2024 Company, Inc. All rights reserved.</p>
+       <div id="div6">
+        <i id="a" class="fa fa-twitter" aria-hidden="true"></i>
+        <i  id="b" class="fa fa-instagram" aria-hidden="true"></i>
+        <i id="c" class="fa fa-facebook" aria-hidden="true"></i>
+
+       </div>
+      </div>
+    </div>
+    </footer>
+  </div>
+</section>
+</body>
+<script src="index.js"></script>
+</html>
